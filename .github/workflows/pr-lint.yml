@@ -1,0 +1,12 @@
+name: Pull Request Name
+
+on: [pull_request]
+
+jobs:
+  pr-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: seferov/pr-lint-action@master
+        with:
+          title-regex: '^(feat|refactor|enhance|fix|chore|blog)(\(.*\))?: .*$'
+          title-regex-flags: 'g'
